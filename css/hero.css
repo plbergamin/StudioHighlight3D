@@ -1,0 +1,111 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* vertically center content */
+  margin-top: -50px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../img/hero1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 36%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0));
+  z-index: 2;
+  opacity: 0; /* start hidden */
+  transition: opacity cubic-bezier(0.445, 0.05, 0.55, 0.95) ease;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 4;
+  max-width: 80%px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  color: var(--color-text);
+  margin-top: -50px;
+  opacity: 0;  /* start hidden */
+}
+
+.hero-title {
+  color:  var(--color-bg-alt);
+  font-size: 4rem;
+  line-height: 1.1;
+  word-break: break-word; /* default browser behavior */
+  overflow-wrap: break-word; /* allow breaking at spaces only */
+  white-space: normal; /* prevent breaking inside words */
+}
+
+.hero-title span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: letterFade 0.5s forwards;
+  white-space: normal; /* allow wrapping at spaces */
+}
+
+.hero-title span span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.hero-subtext {
+  color:  var(--color-bg-alt);
+  font-style: italic;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+
+@keyframes letterFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-subtext {
+text-align: center;
+}
+
+.hero-subtext {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Responsive */
+@media (max-width: 650px) {
+  .hero-title {
+    font-size: 3.8rem;
+    white-space: normal;
+    overflow-wrap: break-word;
+    padding-left: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 3.5rem;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+}
+

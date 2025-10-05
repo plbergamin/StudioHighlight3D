@@ -1,0 +1,214 @@
+/* ==========================================================
+   Global Stylesheet — Studio Highlight 3D
+   ========================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* optional, makes scroll transitions smooth */
+}
+
+/* ---------------------------
+   1. Root Variables (Theme)
+---------------------------- */
+:root {
+  --color-bg: #ffffff;
+  --color-bg-alt: #f7f6f4;
+  --color-text: #222222;
+  --color-text-muted: #666666;
+  --color-accent: #333333; /* muted beige/taupe */
+  --color-accent-hover: #000000;
+  --color-border: #e0dfdc;
+
+  --font-base: 'IBM Plex Serif', serif;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.9rem;
+  --font-size-xxl: 2.5rem;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 600;
+
+  --container-width: 1200px;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 3rem;
+  --spacing-xl: 5rem;
+  --radius: 0.75rem;
+  --transition: all 0.3s ease-in-out;
+}
+
+/* ---------------------------
+   2. Reset & Base
+---------------------------- */
+
+/* Box sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin/padding */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, figure {
+  margin: 0;
+  padding: 0;
+}
+
+/* Body defaults */
+body {
+  font-family: var(--font-base);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+a:hover,
+a:focus {
+  color: var(--color-accent);
+  outline: none;
+}
+
+/* Images & Videos */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+}
+
+/* Lists */
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Buttons */
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+/* Forms */
+input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  width: 100%;
+}
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(194, 169, 138, 0.2);
+}
+
+/* ---------------------------
+   3. Layout
+---------------------------- */
+.container {
+  width: 90%;
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding-block: var(--spacing-md);
+}
+
+/* Sections */
+section {
+  padding-block: var(--spacing-lg);
+}
+
+/* ---------------------------
+   4. Typography
+---------------------------- */
+h1, h2, h3, h4 {
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+}
+h1 { font-size: var(--font-size-xxl); }
+h2 { font-size: var(--font-size-xl); margin-bottom: var(--spacing-sm); }
+h3 { font-size: var(--font-size-lg); }
+p { margin-bottom: var(--spacing-sm); color: var(--color-text-muted); }
+
+.section-title {
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+.section-subtext {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto var(--spacing-lg);
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+}
+
+/* ---------------------------
+   5. Utility Classes
+---------------------------- */
+.hidden-field {
+  display: none;
+}
+
+.cta-primary {
+  display: inline-block;
+  background: var(--color-accent); /* now dark grey */
+  color: #fff;
+  font-weight: var(--font-weight-medium);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0; /* 90-degree corners */
+  border: 1px solid #000; /* thin black contour */
+  text-align: center;
+  transition: var(--transition);
+}
+.cta-primary:hover {
+  background: var(--color-accent-hover); /* darker grey on hover */
+  color: #fff;
+}
+
+.cta-secondary {
+  display: inline-block;
+  border: 1px solid #000; /* thin black border */
+  background: transparent;
+  color: #333333; /* dark grey text */
+  font-weight: var(--font-weight-medium);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0; /* 90-degree corners */
+  text-align: center;
+  transition: var(--transition);
+}
+.cta-secondary:hover {
+  background: var(--color-accent); /* dark grey on hover */
+  color: #fff;
+}
+
+/* ---------------------------
+   6. Responsive Basics
+---------------------------- */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  .container { width: 92%; }
+}

@@ -1,0 +1,230 @@
+/* ==========================================================
+   Portfolio / Showcase Section
+   ========================================================== */
+
+#portfolio {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* ✅ allow section to grow, no cutoff */
+  background-color: #f9f9f9;
+  padding: 60px 5% 40px 5%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Section heading */
+#portfolio h2 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 0.25rem;
+  color: var(--color-text);
+}
+
+#portfolio .small {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.4;
+  display: block;
+}
+
+/* Grid layout */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+/* Portfolio card */
+.portfolio-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  aspect-ratio: 2 / 3;
+  max-height: 70vh;
+  width: 100%;
+
+  display: flex;
+  align-items: stretch;
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* Hover overlay */
+.portfolio-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.portfolio-card:hover::after {
+  opacity: 1;
+}
+
+/* Info overlay */
+.portfolio-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--spacing-md);
+  background: rgba(255, 255, 255, 0.85);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+.portfolio-card:hover .portfolio-info {
+  transform: translateY(0);
+}
+.portfolio-info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: var(--font-weight-bold);
+}
+.portfolio-info p {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+/* Portfolio CTA at the bottom */
+.portfolio-cta {
+  margin-top: 40px;
+}
+.portfolio-cta .cta-primary {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+}
+.portfolio-cta .cta-subtext {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+
+/* ==========================================================
+   Portfolio Lightbox Overlay
+   ========================================================== */
+
+/* Portfolio Lightbox Overlay */
+.portfolio-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.portfolio-lightbox.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.portfolio-lightbox-content {
+  position: relative;
+  width: 90%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-lightbox img {
+  height: 100%; /* full height */
+  width: auto;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 0;
+  transition: opacity 0.5s ease; /* fade between images */
+  opacity: 1;
+}
+
+/* Title and location */
+.portfolio-lightbox-info {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  color: #000;
+  z-index: 2100;
+  text-align: left;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.portfolio-lightbox.active .portfolio-lightbox-info {
+  opacity: 1;
+}
+
+/* Close button */
+.portfolio-lightbox-close {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #000;
+  z-index: 2100;
+  background: none;
+  border: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.portfolio-lightbox.active .portfolio-lightbox-close {
+  opacity: 1;
+}
+
+/* Navigation arrows */
+.portfolio-lightbox .nav-arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #000;
+  cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 2100;
+  user-select: none;
+  padding: 0.5rem 1rem;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.portfolio-lightbox.active .nav-arrow {
+  opacity: 1;
+}
+
+.portfolio-lightbox .nav-arrow.left { left: 1.5rem; }
+.portfolio-lightbox .nav-arrow.right { right: 1.5rem; }
+
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .portfolio-card {
+    max-height: 60vh;
+  }
+}
+@media (max-width: 480px) {
+  .portfolio-card {
+    max-height: 50vh;
+  }
+}
