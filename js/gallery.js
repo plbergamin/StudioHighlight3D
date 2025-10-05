@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // ===== Gallery / Lightbox logic =====
   const galleryItems = document.querySelectorAll('.gallery-item');
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.querySelector('.lightbox-image');
@@ -11,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let currentIndex = 0;
   let images = [];
+
 
   // Fade-in for gallery cards
   galleryItems.forEach((item, i) => {

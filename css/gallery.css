@@ -6,7 +6,7 @@
   position: sticky;
   top: 0;
   padding: 0px 5% 0px;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.85);
   border-bottom: 1px solid #e5e5e5;
   z-index: 1000;
   margin: 0 63.2px 0;
@@ -14,6 +14,10 @@
 
 .gallery-header .brand-name {
   color: #333;
+}
+
+.gallery-header .nav-links:first-child li {
+  background: transparent;
 }
 
 .gallery-header .nav-links li:first-child a {
@@ -85,7 +89,41 @@
   align-items: center;
 }
 
-/* Mobile menu styles */
+/* ==========================================================
+   Top Button (mobile only)
+   ========================================================== */
+
+.btn-top {
+  display: none; /* hidden on desktop */
+  position: fixed;
+  bottom: 2rem;
+  right: 1.5rem;
+  z-index: 2001;
+  background: var(--color-accent, #000);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-top:hover {
+  background: #333;
+  transform: translateY(-2px);
+}
+
+.btn-top:active {
+  transform: translateY(1px);
+}
+
+/* ==========================================================
+   Mobile menu styles
+   ========================================================== */
+
 @media (max-width: 768px) {
   .hamburger {
     display: flex; /* show hamburger on small screens */
@@ -97,7 +135,7 @@
     right: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -121,6 +159,13 @@
   /* Disable scroll when menu is open */
   body.menu-open {
     overflow: hidden;
+  }
+
+  /* ✅ Show Top button on mobile */
+  .btn-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -352,8 +397,20 @@
   }
 }
 
+@media (max-width: 768px) {
+  .gallery-header {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    margin: 0;
+  }
+}
+
 @media (max-width: 480px) {
   .gallery-item {
     max-height: 50vh;
+  }
+
+  .lightbox-header {
+   top: 3.3rem;
   }
 }

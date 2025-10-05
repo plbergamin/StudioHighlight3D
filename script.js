@@ -1,7 +1,10 @@
-//hamburger-menu
+
+// hamburger-menu
 document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.querySelector('.hamburger');
   const navLinks = document.querySelector('.nav-links');
+  if (!hamburger || !navLinks) return;
+
   const navItems = navLinks.querySelectorAll('a');
 
   function closeMenu() {
@@ -14,11 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   hamburger.addEventListener('click', () => {
     const isOpen = navLinks.classList.toggle('active');
     hamburger.classList.toggle('open');
-    if (isOpen) {
-      document.body.classList.add('menu-open');
-    } else {
-      document.body.classList.remove('menu-open');
-    }
+    document.body.classList.toggle('menu-open', isOpen);
   });
 
   // Close menu when clicking any link
@@ -26,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', closeMenu);
   });
 });
-
 
 
 
