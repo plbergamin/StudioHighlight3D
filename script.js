@@ -1,5 +1,26 @@
+// Force hamburger right offset immediately
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.querySelector('.hamburger');
+  const nav = document.querySelector('.nav');
+  if (!hamburger || !nav) return;
+
+  // Get computed right padding of the nav container
+  const navStyle = window.getComputedStyle(nav);
+  const paddingRight = navStyle.paddingRight;
+
+  // Apply it immediately to the hamburger
+  hamburger.style.right = paddingRight;
+
+  // Ensure absolute positioning (only if needed)
+  if (getComputedStyle(hamburger).position !== 'absolute') {
+    hamburger.style.position = 'absolute';
+  }
+});
+
+
 
 // hamburger-menu
+
 document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.querySelector('.hamburger');
   const navLinks = document.querySelector('.nav-links');

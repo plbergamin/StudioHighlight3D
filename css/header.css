@@ -149,8 +149,24 @@ header .cta-primary:hover {
 
 @media (max-width: 768px) {
 
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 1rem; /* fallback for --spacing-md */
+    padding: 0 var(--spacing-md);
+  }
+
+  header {
+    opacity: 1; /* ensure header layout is applied immediately */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+
   .hamburger {
-    display: block;
+    position: relative; /* instead of absolute */
+    right: 0;
+    margin-left: auto;  /* pushes it to the right inside flex */
   }
 
   .nav-links {
@@ -218,7 +234,7 @@ header .cta-primary:hover {
   
   /* force overlay opacity & remove any filters that wash it out */
   .nav-links {
-    background: rgba(255, 255, 255, 0.9) !important; /* 90% opaque white */
+    background: rgba(255, 255, 255, 0.92) !important; /* 90% opaque white */
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
     box-shadow: none !important;
