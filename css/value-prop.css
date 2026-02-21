@@ -15,7 +15,7 @@
 .value-prop .section-title {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   color: var(--color-text);
 }
 
@@ -23,16 +23,22 @@
   font-size: 1rem;
   color: var(--color-text-muted);
   max-width: 600px;
-  margin: 0 auto var(--spacing-xl) auto;
+  margin: 0 auto 2rem auto; /* Center horizontally with auto on left and right */
   line-height: 1.5;
+  text-align: center; /* Center the text inside the container */
+}
+
+.value-prop .section-intro p {
+  text-align: center; /* Ensure paragraph text is centered */
 }
 
 /* Grid Layout */
 .value-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* Always 3 columns */
   gap: 50px;
   justify-content: center;
+  justify-items: center;
   align-items: start;
   max-width: 1100px;
   margin: 0 auto;
@@ -82,11 +88,12 @@
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 50%;
+  border-radius: 80%;
   background: radial-gradient(
     circle,
     rgba(255, 255, 255, 0) 40%,             /* inside fade */
-    rgba(253, 241, 204, 0.9) 55%,           /* solid ring core */
+    rgba(194, 194
+    , 194, 0.5) 55%,           /* solid ring core */
     rgba(255, 255, 255, 0.2) 75%,           /* outer fade */
     rgba(255, 255, 255, 0) 100%
   );
@@ -130,12 +137,12 @@
   }
 
   .value-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: 1fr; /* stack in one column */
     gap: 30px;
   }
 
   .value-card {
-    max-width: 100%;
+    max-width: 50%;
   }
 
   .value-icon {

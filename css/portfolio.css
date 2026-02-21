@@ -137,6 +137,13 @@
   pointer-events: all;
 }
 
+@media (max-width: 1024px) {
+  .portfolio-lightbox img {
+    transition: opacity 0.5s ease, transform 0.3s ease; /* Smooth transition for image change */
+  }
+}
+
+/* Portfolio Lightbox Content */
 .portfolio-lightbox-content {
   position: relative;
   width: 90%;
@@ -144,6 +151,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow-x: auto; /* Allow horizontal scroll */
+  overflow-y: hidden; /* Prevent vertical scroll */
+  transition: transform 0.3s ease; /* Smooth transition for zoom */
 }
 
 .portfolio-lightbox img {
@@ -152,8 +162,9 @@
   object-fit: contain;
   background: #fff;
   border-radius: 0;
-  transition: opacity 0.5s ease; /* fade between images */
+  transition: opacity 0.5s ease, transform 0.3s ease; /* smooth transitions */
   opacity: 1;
+  transform-origin: left center; /* Zoom from left edge */
 }
 
 /* Title and location */
@@ -216,15 +227,8 @@
 .portfolio-lightbox .nav-arrow.left { left: 1.5rem; }
 .portfolio-lightbox .nav-arrow.right { right: 1.5rem; }
 
+/* Prevent vertical scroll */
+html, body {
+  overflow-x: hidden;
+}
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .portfolio-card {
-    max-height: 60vh;
-  }
-}
-@media (max-width: 480px) {
-  .portfolio-card {
-    max-height: 50vh;
-  }
-}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Studio Highlight 3D — Architectural Visualization </title>
+  <title>Studio Highlight — Architectural Visualization </title>
   <meta name="description" content="Studio Highlight 3D creates photorealistic architectural visualization that helps architects, developers, and designers sell projects, win approvals, and impress investors.">
   <meta name="keywords" content="Studio Highlight 3D, architectural visualization, archviz, photorealistic renders, architectural renderings, 3D walkthroughs, virtual tours, render studio">
   <link rel="canonical" href="https://www.studiohighlight3d.com/">
@@ -33,7 +33,8 @@
   <link rel="stylesheet" href="css/cta.css">
   <link rel="stylesheet" href="css/contact.css">
   <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" href="css/pricing.css">
+    <link rel="stylesheet" href="css/about.css">
 
   <!-- JSON-LD structured data -->
   <script type="application/ld+json">
@@ -78,7 +79,7 @@
       <a href="#top" class="brand" aria-label="Studio Highlight 3D homepage">
         <div class="logo" aria-hidden="true">SH</div>
         <div class="brand-text">
-          <div class="brand-name">Studio Highlight 3D</div>
+          <div class="brand-name">Studio Highlight</div>
           <!-- <div class="brand-tagline">Architectural Visualization</div> -->
         </div>
       </a>
@@ -91,10 +92,10 @@
 
       <nav>
         <ul class="nav-links">
-          <li><a href="#portfolio">Work</a></li>
-          <li><a href="#process">Process</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a class="cta-primary" href="#contact">Start Your Project</a></li>
+          <li><a href="#portfolio">Selected Works</a></li>
+          <li><a href="#value-prop">Services</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a class="cta-primary" href="#contact">Request a Quote</a></li>
         </ul>
       </nav>
     </div>
@@ -102,49 +103,58 @@
 
   <main>
 <!-- Hero -->
-    <section id="hero" class="hero">
-      <!-- Background image & gradient stay via CSS pseudo-elements -->
+<section id="hero" class="hero">
 
-      <!-- Wrapper for hero content -->
-      <div class="hero-fade-wrapper">
-        <div class="hero-copy">
-          <h1 class="hero-title">Were vision meets reality.</h1>
-          <p class="hero-subtext">Architectural visualization that inspires clients, wins approvals, and sells projects.</p>
-          <!-- <div class="hero-ctas">
-            <a href="#contact" class="cta-primary">Start Your Project</a>
-            <a href="#portfolio" class="cta-secondary">See Our Work</a>
-          </div> -->
-        </div>
-      </div>
-    </section>
+  <!-- White fade overlay -->
+  <div class="hero-overlay"></div>
+
+  <!-- Wrapper for hero content -->
+  <div class="hero-content">
+    <div class="hero-copy">
+      <h1 class="hero-title">
+        Residential Architectural Visualization for Planning and Marketing
+      </h1>
+
+      <p class="hero-subtext">
+        Architect-led CGI for houses, extensions, housing schemes and apartment buildings across Ireland and Europe.
+      </p>
+    </div>
+
+    <div class="hero-ctas">
+      <a href="#contact" class="cta-primary">Request a Quote</a>
+      <a href="#portfolio" class="cta-primary">View Selected Works</a>
+    </div>
+  </div>
+</section>
 
 
     <!-- Portfolio -->
     <section id="portfolio">
-      <h2>Portfolio — Selected Works</h2>
-          <p class="small">Your future projects deserve to be seen like this.</p>
+      <h2>Selected Works</h2>
+          <p class="small">Your future projects deserve to be presented like this.</p>
       <div class="portfolio-grid">
 
         <!-- Card 1 -->
         <div class="portfolio-card">
-          <img src="img/project1.png" alt="Luxury Apartment Interior">
+          <img src="img/project1.png" alt="Contemporary house">
           <div class="portfolio-info">
-            <h3>Luxury Apartment Interior</h3>
-            <p>Residential • New York, USA</p>
+            <h3>Contemporary House</h3>
+            <p>Exterior and interior CGI</p>
           </div>
           <div class="image-placeholders">
             <img src="img/project1/project1-1.png" alt="">
             <img src="img/project1/project1-2.png" alt="">
             <img src="img/project1/project1-3.png" alt="">
+            <img src="img/project1/project1-4.png" alt="">
           </div>
         </div>
 
         <!-- Card 2 -->
         <div class="portfolio-card">
-          <img src="img/project2.png" alt="Modern Office Exterior">
+          <img src="img/project2.png" alt="Housing development">
           <div class="portfolio-info">
-            <h3>Modern Office Exterior</h3>
-            <p>Commercial • London, UK</p>
+            <h3>Housing Development</h3>
+            <p>Planning-focused exterior and context CGI</p>
           </div>
           <div class="image-placeholders">
             <img src="img/project2/project2-1.png" alt="">
@@ -155,10 +165,10 @@
 
         <!-- Card 3 -->
         <div class="portfolio-card">
-          <img src="img/project3.png" alt="Hotel Lobby Design">
+          <img src="img/project3.png" alt="Residential extension">
           <div class="portfolio-info">
-            <h3>Hotel Lobby Design</h3>
-            <p>Hospitality • Dubai, UAE</p>
+            <h3>Residential Extension</h3>
+            <p>Client presentation - Before/after visuals + Interiors</p>
           </div>
           <div class="image-placeholders">
             <img src="img/project3/project3-1.png" alt="">
@@ -169,63 +179,68 @@
 
         <!-- Card 4 -->
         <div class="portfolio-card">
-          <img src="img/project4.png" alt="Urban Residential Complex">
+          <img src="img/project4.png" alt="Apartment blocks">
           <div class="portfolio-info">
-            <h3>Urban Residential Complex</h3>
-            <p>Residential • Berlin, Germany</p>
+            <h3>Two-Block Apartment Development</h3>
+            <p>Rear courtyard &amp parking context CGI</p>
           </div>
-        </div>
-        <div class="image-placeholders">
+          <div class="image-placeholders">
             <img src="img/project4/project4-1.png" alt="">
             <img src="img/project4/project4-2.png" alt="">
             <img src="img/project4/project4-3.png" alt="">
           </div>
-      </div>
+        </div>
 
-        <div class="portfolio-cta">
+        <div class="portfolio-lightbox-content">
+          <div class="zoom-container">
+            <img src="" alt="">
+          </div>
+        </div>
+
+        <!-- <div class="portfolio-cta">
           <a href="gallery.html" class="cta-primary">Explore Full Gallery</a>
           <p class="cta-subtext">Discover the full range of projects that have helped our clients win investors and approvals.</p>
-        </div>
+        </div> -->
     </section>
 
     <!-- Value Proposition -->
-    <section class="container value-prop" aria-labelledby="value-heading">
-      <h2 id="value-heading" class="section-title">Why Work With Us</h2>
+    <section id="value-prop"class="container value-prop" aria-labelledby="value-heading">
+      <h2 class="section-title">Services</h2>
       <p class="section-intro">We’re more than renderers — we’re your partners in turning ideas into reality.</p>
 
       <div class="value-grid">
         <div class="value-card">
           <div class="value-icon">
-            <img src="img/photorealism.png" alt="Photorealistic render icon">
+            <img src="img/planning.png" alt="Planning icon">
           </div>
-          <h3>Photorealism That Sells</h3>
-          <p>Our renders help you get buy-in from stakeholders faster.</p>
+          <h3>Planning Visuals</h3>
+          <p>Accurate contextual images prepared for residential planning submissions.</p>
         </div>
 
         <div class="value-card">
           <div class="value-icon">
-            <img src="img/architect.png" alt="Architect icon">
+            <img src="img/marketing.png" alt="Marketing icon">
           </div>
-          <h3>Architect-Led Team</h3>
-          <p>We speak your language and integrate with your workflow.</p>
+          <h3>Marketing Images</h3>
+          <p>High-quality residential CGI designed for brochures and property marketing.</p>
         </div>
 
         <div class="value-card">
           <div class="value-icon">
-            <img src="img/fast.png" alt="Clock icon">
+            <img src="img/design.png" alt="Design icon">
           </div>
-          <h3>Fast, Reliable Delivery</h3>
-          <p>Meet tight deadlines without compromising quality — average project in 7–10 days.</p>
+          <h3>Design Support</h3>
+          <p>Early-stage visuals to test massing, materials and façade design options.</p>
         </div>
 
-        <div class="value-card">
+        <!-- <div class="value-card">
           <div class="value-icon">
             <img src="img/flexible.png" alt="Flexible packages icon">
           </div>
           <h3>Flexible Packages</h3>
           <p>From quick concept sketches to final marketing visuals — scale as needed.</p>
         </div>
-      </div>
+      </div> -->
     </section>
 
     <!-- Process -->
@@ -237,22 +252,22 @@
         <div class="step">
           <div class="step-circle" data-step="1">1</div>
           <strong>Brief &amp; Quote</strong>
-          <p>Send us your drawings, sketches or brief. We reply with a clear quote.</p>
+          <p>Send us your drawings, sketches or brief. We reply with a clear quote within 24 hours</p>
         </div>
         <div class="step">
           <div class="step-circle" data-step="2">2</div>
           <strong>Modeling &amp; Preview</strong>
-          <p>We model the scene and share early drafts for alignment.</p>
+          <p>Accurate modeling, materials and lighting setup. Initial draft sent for your review.</p>
         </div>
         <div class="step">
           <div class="step-circle" data-step="3">3</div>
           <strong>Refinements</strong>
-          <p>Your feedback shapes the final look — up to X revisions included.</p>
+          <p>Your feedback shapes the final look — up to 2 revisions rounds included.</p>
         </div>
         <div class="step">
           <div class="step-circle" data-step="4">4</div>
           <strong>Delivery</strong>
-          <p>Stunning visuals, delivered in web-ready and print-ready formats.</p>
+          <p>High-resolution 4K images supplied in print-ready and web-ready formats.</p>
         </div>
       </div>
    </section>
@@ -268,20 +283,64 @@
 
 
     <!-- Testimonials -->
-    <section id="testimonials" class="container testimonials" aria-labelledby="testimonials-heading">
+    <!-- <section id="testimonials" class="container testimonials" aria-labelledby="testimonials-heading">
       <h2 id="testimonials-heading" class="section-title">Testimonials</h2>
       <p class="section-subtext">Real results from real clients.</p>
 
-      <div id="testimonialCard" class="testimonial" aria-live="polite">
+      <div id="testimonialCard" class="testimonial" aria-live="polite"> -->
         <!-- JS injects the testimonial content here -->
+      <!-- </div>
+    </section> -->
+
+<!-- Pricing -->
+
+<section id="pricing" class="pricing">
+  <div class="pricing-table">
+    <h2>Architectural Visualization Packages</h2>
+    <p class="section-subtext">Clear, structured packages to help you understand scope, deliverables and expected investment for your project.</p>
+
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Standard Package</h3>
+        <p class="price">€500</p>
+        <p>Three renders. Covers houses, extensions, and small multi-unit projects. First Delivery: 4–5 business days. Quotations adjustable for larger sites or additional views.</p>
       </div>
-    </section>
+
+      <div class="pricing-card">
+        <h3>Professional Package</h3>
+        <p class="price">€850</p>
+        <p>Five renders. Suitable for larger residential projects, apartment buildings, or small housing schemes. First Delivery: 6–7 business days. Quotation scalable to project complexity.</p>
+      </div>
+
+      <div class="pricing-card">
+        <h3>Comprehensive Package</h3>
+        <p class="price">€1,250</p>
+        <p>Eight renders. Designed for extensive residential developments, mixed-use schemes, and complex architectural projects. First Delivery: 7–10 business days. Quotation can be tailored to any scale.</p>
+      </div>
+
+      <div class="pricing-card pricing-note-card">
+        <h3>Packages Details</h3>
+        <p>Includes modeling, lighting, materials, and two revision rounds. Each round to be delivered within 1-2 business days.<br><a href="#portfolio" class="selected-works">Selected Works</a> can be used as a reference for expected level of detail for each package. Complex or commercial projects quoted individually.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- About -->
+
+<section id="about" class="about">
+  <div class="about-content">
+    <h2>About Us</h2>
+    <p>Dublin based architects providing residential architectural visualization services across Ireland, the UK and Europe. Background in architectural design with focus on buildable, context-sensitive residential projects.</p>
+  </div>
+</section>
 
 
     <!-- Contact -->
     <section id="contact" class="container contact" aria-labelledby="contact-heading">
       <div class="contact-form-area">
-        <h2 id="contact-heading" class="section-title">Start Your Project</h2>
+        <h2 id="contact-heading" class="section-title">Request a Quote</h2>
         <p class="section-subtext">Fill out the form or book a quick consultation. We’ll reply within 24 hours.</p>
 
         <form id="leadForm" action="#" method="post" enctype="multipart/form-data" onsubmit="submitForm(event)" novalidate>
@@ -304,7 +363,7 @@
 
           <div class="form-row">
             <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Brief project description, deadline, budget..." required></textarea>
+            <textarea id="message" name="message" placeholder="Desired package, brief project description, deadline, budget..." required></textarea>
           </div>
 
           <div class="form-actions">
@@ -317,7 +376,6 @@
           <h3>Quick Contact</h3>
           <p>Phone: <a href="tel:+35315555555">+353&nbsp;1&nbsp;555&nbsp;5555</a></p>
           <p>Email: <a href="mailto:hello@studiohighlight3d.com">hello@studiohighlight3d.com</a></p>
-          <p>Average response within <strong>24 hours</strong>.</p>
         </div>
       </div>
     </section>
@@ -329,8 +387,8 @@
       <div class="footer-brand">
         <div class="logo-mini">SH</div>
         <div class="footer-text">
-          <div class="brand-name">Studio Highlight 3D</div>
-          <div class="brand-tagline">Where Vision Meets Reality</div>
+          <div class="brand-name">Studio Highlight</div>
+          <div class="brand-tagline">Architectural Visualization</div>
         </div>
       </div>
 
@@ -340,7 +398,7 @@
         <a href="#contact">Contact</a>
       </nav> -->
 
-      <div class="footer-copy">© 2025 Studio Highlight 3D — All rights reserved.</div>
+      <div class="footer-copy">© 2025 Studio Highlight — All rights reserved.</div>
     </div>
   </footer>
 

@@ -3,9 +3,9 @@
    ========================================================== */
 
 header {
-  background-color: transparent; /* transparent initially */
+  background-color: transparent;
   border: none;
-  height: 50px; /* slim bar */
+  height: 50px;
   padding: 0;
   position: sticky;
   top: 0;
@@ -22,15 +22,15 @@ header.scrolled {
 }
 
 header.scrolled nav a {
-  color: var(--color-text); /* dark text when scrolled */
+  color: var(--color-text);
 }
 
 header.scrolled .brand-text {
-  color: var(--color-text); /* dark text when scrolled */
+  color: var(--color-text);
 }
 
 header.scrolled .cta-primary {
-  background: var(--color-accent); /* dark grey buttons */
+  background: var(--color-accent);
   color: #fff;
 }
 
@@ -60,7 +60,7 @@ header.scrolled .cta-primary {
   justify-content: center;
   font-weight: var(--font-weight-bold);
   font-size: 1rem;
-  border-radius: 0; /* match buttons */
+  border-radius: 0;
 }
 
 .brand-text {
@@ -91,19 +91,25 @@ nav a::after {
   bottom: 0;
   width: 0%;
   height: 2px;
-  background-color: var(--color-accent);
+  background-color: #fff;
   transition: width 0.3s ease;
 }
 
+/* Hover effect for nav items, no text color change */
 nav a:hover::after,
 nav a:focus::after {
   width: 100%;
 }
 
+nav a:hover,
+nav a:focus {
+  color: #fff;  /* Keep the text color as white even on hover */
+}
+
 /* Buttons */
 header .cta-primary {
   padding: 0.4rem 1rem;
-  font-size: 0.8rem;
+  font-size: 1rem; /* Same font size as other menu items */
   border-radius: 0;
   border: 1px solid var(--color-accent);
   background: var(--color-accent);
@@ -112,6 +118,13 @@ header .cta-primary {
 
 header .cta-primary:hover {
   background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  text-decoration: none; /* Prevent underline on hover */
+}
+
+/* Remove line effect from .cta-primary */
+header .cta-primary::after {
+  display: none;
 }
 
 /* ---------- HAMBURGER ---------- */
@@ -133,16 +146,15 @@ header .cta-primary:hover {
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--color-accent); /* ✅ accent color lines */
-  border-radius: 0;                /* ✅ sharp corners */
+  background: var(--color-accent);
+  border-radius: 0;
   transition: transform 0.35s cubic-bezier(.2,.9,.3,1), opacity 0.2s ease;
   transform-origin: center center;
-  display: block;
+  display: inline-block;
   will-change: transform, opacity;
-  box-shadow: none;                /* ensure no soft edges */
+  box-shadow: none;
 }
 
-/* initial positions */
 .hamburger span:nth-child(1) { top: 0; }
 .hamburger span:nth-child(2) { top: 50%; transform: translateY(-50%); }
 .hamburger span:nth-child(3) { bottom: 0; }
@@ -154,20 +166,21 @@ header .cta-primary:hover {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 0 1rem; /* fallback for --spacing-md */
     padding: 0 var(--spacing-md);
   }
 
-  header {
-    opacity: 1; /* ensure header layout is applied immediately */
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .hamburger {
-    position: relative; /* instead of absolute */
-    right: 0;
-    margin-left: auto;  /* pushes it to the right inside flex */
-  }
+.hamburger {
+  position: absolute;
+  top: 50%;
+  right: 5%; /* You can adjust this as needed */
+  transform: translateY(-50%);
+  width: 30px;
+  height: 24px;
+  display: block;
+  cursor: pointer;
+  z-index: 2001;
+  -webkit-tap-highlight-color: transparent;
+}
 
   .nav-links {
     position: fixed;
@@ -177,28 +190,32 @@ header .cta-primary:hover {
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    background: rgba(255, 255, 255, 0.95); /* ✅ stronger 90% white look */
+    background: rgba(255, 255, 255, 0.92);
     transform: translateX(100%);
     transition: transform 0.4s ease;
     z-index: 2000;
     font-size: 2rem;
-    backdrop-filter: none; /* avoid lightening from blur */
   }
 
   .nav-links.active {
     transform: translateX(0);
   }
 
+  /* Mobile links — no hover color change */
   .nav-links li a {
     color: #000;
     text-decoration: none;
+  }
+
+  /* Disable underline animation in mobile */
+  .nav-links li a::after {
+    display: none;
   }
 
   .nav-links li a.cta-primary {
     color: #fff;
   }
 
-  /* ✅ Perfect X transform remains */
   .hamburger.open span:nth-child(1) {
     top: 50%;
     transform: translateY(-50%) rotate(45deg);
@@ -206,38 +223,14 @@ header .cta-primary:hover {
 
   .hamburger.open span:nth-child(2) {
     opacity: 0;
-    transform: none;
   }
 
   .hamburger.open span:nth-child(3) {
-    bottom: auto;
     top: 50%;
     transform: translateY(-50%) rotate(-45deg);
   }
+
   body.menu-open {
     overflow: hidden;
   }
-  
-  /* --- FINAL HAMBURGER + OVERLAY FIX --- */
-  .hamburger span {
-    background: var(--color-accent) !important;
-    border-radius: 0 !important;        /* sharp corners */
-    box-shadow: none !important;
-    -webkit-mask-image: none !important;
-    mask-image: none !important;
-  }
-  
-  .hamburger.open span:nth-child(1),
-  .hamburger.open span:nth-child(3) {
-    border-radius: 0 !important;        /* keep sharp when rotated */
-  }
-  
-  /* force overlay opacity & remove any filters that wash it out */
-  .nav-links {
-    background: rgba(255, 255, 255, 0.92) !important; /* 90% opaque white */
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    box-shadow: none !important;
-  }
 }
-

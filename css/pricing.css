@@ -1,0 +1,109 @@
+.pricing {
+  padding: 100px 5%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.pricing-table {
+  width: 100%;
+  max-width: 1200px;
+  background: #fff;
+  padding: 60px 50px;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 12px 35px rgba(169, 169, 169, 0.9);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.pricing-table h2 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 10px;
+  color: var(--color-text);
+}
+
+.pricing-table .section-subtext {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  margin-bottom: 40px;
+}
+
+/* Grid: default 4 cards in a row if possible */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  margin-bottom: 30px;
+}
+
+/* Pricing cards */
+.pricing-card {
+  background: #fff;
+  padding: 20px;
+  max-width: 240px;
+  box-sizing: border-box;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.pricing-card h3 {
+  font-size: 1.3rem;
+  font-weight: var(--font-weight-bold);
+  margin: 20px 0 10px;
+  color: var(--color-text);
+}
+
+.pricing-card .price {
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 15px;
+  color: var(--color-text);
+}
+
+.pricing-card p {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* Selected Works styling */
+.pricing .selected-works {
+  background: var(--color-accent);
+  color: #fff;
+  padding: 0px 6px 2px 6px;
+  border-radius: 0px;
+  text-decoration: none;
+  font-weight: var(--font-weight-bold);
+}
+
+.pricing .selected-works:hover {
+  opacity: 0.85;
+}
+
+/* ==========================================================
+   Responsive: grid changes
+   ========================================================== */
+
+/* Medium screens: 2 columns */
+@media (max-width: 1024px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+/* Small screens: 1 column */
+@media (max-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .pricing-card {
+    max-width: 100%;
+  }
+}
