@@ -97,13 +97,14 @@ document.addEventListener('DOMContentLoaded', () => {
   document.body.appendChild(lightbox);
 
   const lightboxImg = lightbox.querySelector('img');
+  const lightboxTitle = lightbox.querySelector('.portfolio-lightbox-info h3');
+  const lightboxLoc = lightbox.querySelector('.portfolio-lightbox-info p');
   const closeBtn = lightbox.querySelector('.portfolio-lightbox-close');
   const prevBtn = lightbox.querySelector('.nav-arrow.left');
   const nextBtn = lightbox.querySelector('.nav-arrow.right');
 
   let currentIndex = 0;
   let currentImages = [];
-  let isZoomed = false;
 
   portfolioCards.forEach((card) => {
     card.addEventListener('click', () => {
@@ -111,29 +112,44 @@ document.addEventListener('DOMContentLoaded', () => {
       currentImages = [...placeholders].map(img => img.src);
       currentIndex = 0;
 
+      // const infoH3 = card.querySelector('.portfolio-info h3');
+      // const infoP = card.querySelector('.portfolio-info p');
+      // lightboxTitle.textContent = infoH3 ? infoH3.textContent : '';
+      // lightboxLoc.textContent = infoP ? infoP.textContent : '';
+
+      // Disable scrolling when the lightbox is open
+      document.body.style.overflow = 'hidden';
+
       lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden'; // Block scrolling
-      showImage(currentIndex);
+      showImage(currentIndex, true);
     });
   });
 
-  function showImage(index) {
+  function showImage(index, immediate = false) {
     if (!currentImages.length) return;
     if (index < 0) index = currentImages.length - 1;
     if (index >= currentImages.length) index = 0;
     currentIndex = index;
 
-    lightboxImg.style.opacity = 0; // Fade out
+    if (immediate) {
+      lightboxImg.style.opacity = 1;
+      lightboxImg.src = currentImages[currentIndex];
+      return;
+    }
 
+    // Fade out
+    lightboxImg.style.opacity = 0;
     setTimeout(() => {
       lightboxImg.src = currentImages[currentIndex];
-      lightboxImg.style.opacity = 1; // Fade in
-    }, 300); // Matches the fade transition in the CSS
+      // Fade in
+      lightboxImg.style.opacity = 1;
+    }, 300); // matches CSS transition
   }
 
   function closeLightbox() {
     lightbox.classList.remove('active');
-    document.body.style.overflow = ''; // Restore scroll when closed
+    // Re-enable scrolling when the lightbox is closed
+    document.body.style.overflow = '';
   }
 
   closeBtn.addEventListener('click', closeLightbox);
@@ -143,34 +159,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   prevBtn.addEventListener('click', () => showImage(currentIndex - 1));
   nextBtn.addEventListener('click', () => showImage(currentIndex + 1));
-
-  // Double-tap zoom functionality
-  let lastTap = 0;
-  lightboxImg.addEventListener('touchend', (e) => {
-    const currentTime = new Date().getTime();
-    const tapLength = currentTime - lastTap;
-    if (tapLength < 500 && tapLength > 0) {
-      toggleZoom();
-    }
-    lastTap = currentTime;
-  });
-
-  function toggleZoom() {
-    if (isZoomed) {
-      lightboxImg.style.transform = 'scale(1)';
-      lightboxImg.style.transition = 'transform 0.3s ease'; // Smooth zoom out transition
-    } else {
-      lightboxImg.style.transform = 'scale(4)';
-      lightboxImg.style.transition = 'transform 0.3s ease'; // Smooth zoom in transition
-    }
-    isZoomed = !isZoomed;
-
-    // Ensure the image scrolls to the left edge when zoomed in
-    const content = lightbox.querySelector('.portfolio-lightbox-content');
-    if (isZoomed) {
-      content.scrollLeft = 0; // Scroll to the left edge of the image
-    }
-  }
 });
 
 // value-prop.js
