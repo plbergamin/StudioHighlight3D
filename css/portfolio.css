@@ -222,12 +222,17 @@
   .portfolio-card {
     max-height: 60vh;
   }
-.portfolio-lightbox {
-  background: rgba(255, 255, 255, 1);
+  .portfolio-lightbox {
+    background: rgba(255, 255, 255, 1);
+  }
 }
 
-
+@media (max-width: 930px) {
+  .portfolio-lightbox .nav-arrow {
+    color: #fff;
+  }
 }
+
 @media (max-width: 480px) {
   .portfolio-card {
     max-height: 50vh;

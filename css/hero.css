@@ -16,7 +16,7 @@
   inset: 0;
   background-image: 
     linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-    url("../img/hero1.png");
+    url("../img/hero1.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -96,6 +96,10 @@
 @media (max-width: 850px) {
   .hero-content {
     padding: 0 2rem;
+  }
+
+  .hero::before {
+    background-position: 35% center;
   }
 }
 
