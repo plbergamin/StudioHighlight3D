@@ -197,6 +197,10 @@ header .cta-primary::after {
     font-size: 2rem;
   }
 
+  header .cta-primary {
+    font-size: 2rem;
+  }
+
   .nav-links.active {
     transform: translateX(0);
   }
